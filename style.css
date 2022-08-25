@@ -1,0 +1,83 @@
+body {
+    box-sizing: border-box;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: transparent;
+    z-index: 1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: white; */
+}
+
+a, a:hover, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    background-color: grey;
+}
+
+nav a{
+    padding:1rem;
+}
+
+nav img {
+    padding: 1rem;
+}
+
+nav img:hover {
+    background-color: red;
+}
+
+#home {
+    background: url(https://www.w3schools.com/w3images/parallax1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 25rem;
+    margin-top: -4.5rem;
+    filter: opacity(0.8);
+}
+
+#home > .txt {
+    margin: 0 auto;
+    width: 35%;
+    padding-top: 12.5rem;
+}
+
+.txt > h1{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+#about {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#about:nth-child(3) {
+    text-align: left;
+}
+
+.side {
+    display: flex;
+}
+
+.side > img {
+    width: ;
+}
