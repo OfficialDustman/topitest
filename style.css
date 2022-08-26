@@ -22,7 +22,7 @@ header {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     /* background: white; */
 }
 
@@ -46,6 +46,15 @@ i {
 
 nav .fa-magnifying-glass:hover {
     background-color: red;
+}
+
+.fa-bars{
+    display: none;
+}
+
+.fa-bars:hover {
+    background-color: black;
+    color: white;
 }
 
 #home {
@@ -90,7 +99,7 @@ nav .fa-magnifying-glass:hover {
 .side {
     width: 75%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 2rem;
 }
 
@@ -411,6 +420,36 @@ footer p > a {
     button {
         width: auto;
     }
+
+    .icons {
+        gap: 1rem;
+    }
+
+    .fa-magnifying-glass {
+        display: none;
+    }
+
+    .fa-bars{
+        display: block;
+    }
+    
+    .fa-user, .fa-th, .fa-envelope {
+        display: none;
+    }
+
+    nav div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav div > a:first-child{
+        display: block;
+    }
+
+    nav div > a {
+        display: none;
+    }
+
 }
 
 @media only screen and (max-width: 521px) and (min-width: 350px) {

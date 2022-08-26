@@ -5,6 +5,7 @@ img2 = document.querySelectorAll('.img2 img')
 console.log(img);
 modalImg = document.getElementById("img01")
 caption = document.getElementById("caption")
+span = document.getElementsByClassName("close")[0];
 
 scrollTrigger = 60;
 
@@ -37,12 +38,40 @@ img2.forEach((imgs) => {
   }
 });
 
-
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
 }
+
+//for responsive 
+txk = document.querySelector('.txt h1')
+const res = window.matchMedia("(max-width: 600px) and (min-width: 350px)")
+
+function listen(res) {
+  if (res.matches) { // If media query matches
+    txk.textContent = 'MY LOGO'
+  } else {
+    txk.textContent = 'MY WEBSITE LOGO'
+  }
+}
+
+listen(res)
+res.addListener(listen)
+
+bar = document.querySelector('.fa-bars')
+nav = document.querySelector('nav')
+nDiv = document.querySelectorAll('nav div > a')
+console.log(nDiv);
+
+bar.addEventListener('click', () => {
+  // nDiv.style.display.toggle('block')
+
+  for (let i = 1; i < nDiv.length; i++) {
+    if (nDiv[i].style.display === "none") {
+      nDiv[i].style.display = "block";
+      nav.style.backgroundColor = 'white';
+    } else {
+      nDiv[i].style.display = "none";
+    }
+  }
+
+});
