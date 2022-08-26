@@ -422,7 +422,7 @@ footer p > a {
     }
 
     .icons {
-        gap: 1rem;
+        gap: 16px;
     }
 
     .fa-magnifying-glass {

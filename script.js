@@ -71,6 +71,7 @@ bar.addEventListener('click', () => {
       nav.style.backgroundColor = 'white';
     } else {
       nDiv[i].style.display = "none";
+      nav.style.backgroundColor = 'transparent';
     }
   }
 
