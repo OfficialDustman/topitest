@@ -22,8 +22,13 @@ header {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     /* background: white; */
+}
+
+nav div {
+    display: flex;
+    align-items: center;
 }
 
 a, a:hover, a:visited {
@@ -63,7 +68,7 @@ nav .fa-magnifying-glass:hover {
     background-size: cover;
     background-position: center;
     height: 25rem;
-    margin-top: -4.5rem;
+    margin-top: -5rem;
     filter: opacity(0.8);
 }
 
@@ -421,8 +426,8 @@ footer p > a {
         width: auto;
     }
 
-    .icons {
-        gap: 16px;
+    .icons > i {
+        margin: 10px;
     }
 
     .fa-magnifying-glass {
@@ -437,8 +442,11 @@ footer p > a {
         display: none;
     }
 
+    nav {
+        align-items: flex-start;
+    }
+
     nav div {
-        display: flex;
         flex-direction: column;
     }
 

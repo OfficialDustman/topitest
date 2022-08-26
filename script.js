@@ -45,22 +45,30 @@ span.onclick = function() {
 //for responsive 
 txk = document.querySelector('.txt h1')
 const res = window.matchMedia("(max-width: 600px) and (min-width: 350px)")
+bar = document.querySelector('.fa-bars')
+nav = document.querySelector('nav')
+nDiv = document.querySelectorAll('nav div > a')
+console.log(nDiv);
 
 function listen(res) {
+
   if (res.matches) { // If media query matches
     txk.textContent = 'MY LOGO'
+    for (let i = 1; i < nDiv.length; i++) {
+      nDiv[i].style.display = "none";
+    }
   } else {
     txk.textContent = 'MY WEBSITE LOGO'
+
+    for (let i = 1; i < nDiv.length; i++) {
+      nDiv[i].style.display = "flex";
+      nDiv[i].style.alignItems = 'center'
+    }
   }
 }
 
 listen(res)
 res.addListener(listen)
-
-bar = document.querySelector('.fa-bars')
-nav = document.querySelector('nav')
-nDiv = document.querySelectorAll('nav div > a')
-console.log(nDiv);
 
 bar.addEventListener('click', () => {
   // nDiv.style.display.toggle('block')
@@ -76,3 +84,19 @@ bar.addEventListener('click', () => {
   }
 
 });
+
+
+// bar.addEventListener('click', () => {
+//   // nDiv.style.display.toggle('block')
+
+//   for (let i = 1; i < nDiv.length; i++) {
+//     if (nDiv[i].style.display === "none") {
+//       nDiv[i].style.display = "block";
+//       nav.style.backgroundColor = 'white';
+//     } else {
+//       nDiv[i].style.display = "none";
+//       nav.style.backgroundColor = 'transparent';
+//     }
+//   }
+
+// });
