@@ -1,3 +1,7 @@
+* {
+    scroll-behavior: smooth;
+}
+
 body {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
@@ -440,6 +444,10 @@ footer p > a {
     
     .fa-user, .fa-th, .fa-envelope {
         display: none;
+    }
+
+    .dets h3 > .fa-envelope {
+        display: var(--fa-display,inline-block) !important;
     }
 
     nav {

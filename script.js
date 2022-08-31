@@ -1,11 +1,10 @@
-header = document.querySelector('header')
-modal = document.getElementById("myModal")
-img = document.querySelectorAll('.img1 img')
-img2 = document.querySelectorAll('.img2 img')
-console.log(img);
-modalImg = document.getElementById("img01")
-caption = document.getElementById("caption")
-span = document.getElementsByClassName("close")[0];
+const header = document.querySelector('header')
+      modal = document.getElementById("myModal"),
+      img = document.querySelectorAll('.img1 img'),
+      secondImg = document.querySelectorAll('.img2 img'),
+      modalImg = document.getElementById("img01"),
+      caption = document.getElementById("caption"),
+      span = document.getElementsByClassName("close")[0];
 
 scrollTrigger = 60;
 
@@ -29,7 +28,7 @@ img.forEach((imgs) => {
   }
 });
 
-img2.forEach((imgs) => {
+secondImg.forEach((imgs) => {
 
   imgs.onclick = function(){
     modal.style.display = "block";
@@ -42,61 +41,47 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-//for responsive 
-txk = document.querySelector('.txt h1')
-const res = window.matchMedia("(max-width: 600px) and (min-width: 350px)")
-bar = document.querySelector('.fa-bars')
-nav = document.querySelector('nav')
-nDiv = document.querySelectorAll('nav div > a')
-console.log(nDiv);
+modal.onclick = function() {
+  modal.style.display = "none";
+}
 
-function listen(res) {
+//for responsiveness
+const responsive = window.matchMedia("(max-width: 600px) and (min-width: 350px)"),
+      webText = document.querySelector('.txt h1'),
+      bar = document.querySelector('.fa-bars'),
+      nav = document.querySelector('nav'),
+      navDiv = document.querySelectorAll('nav div > a');
 
-  if (res.matches) { // If media query matches
-    txk.textContent = 'MY LOGO'
-    for (let i = 1; i < nDiv.length; i++) {
-      nDiv[i].style.display = "none";
+function listen(responsive) {
+
+  if (responsive.matches) { 
+    webText.textContent = 'MY LOGO'
+    for (let i = 1; i < navDiv.length; i++) {
+      navDiv[i].style.display = "none";
     }
   } else {
-    txk.textContent = 'MY WEBSITE LOGO'
+    webText.textContent = 'MY WEBSITE LOGO'
 
-    for (let i = 1; i < nDiv.length; i++) {
-      nDiv[i].style.display = "flex";
-      nDiv[i].style.alignItems = 'center'
+    for (let i = 1; i < navDiv.length; i++) {
+      navDiv[i].style.display = "flex";
+      navDiv[i].style.alignItems = 'center'
     }
   }
 }
 
-listen(res)
-res.addListener(listen)
+listen(responsive)
+responsive.addListener(listen)
 
 bar.addEventListener('click', () => {
-  // nDiv.style.display.toggle('block')
 
-  for (let i = 1; i < nDiv.length; i++) {
-    if (nDiv[i].style.display === "none") {
-      nDiv[i].style.display = "block";
+  for (let i = 1; i < navDiv.length; i++) {
+    if (navDiv[i].style.display === "none") {
+      navDiv[i].style.display = "block";
       nav.style.backgroundColor = 'white';
     } else {
-      nDiv[i].style.display = "none";
+      navDiv[i].style.display = "none";
       nav.style.backgroundColor = 'transparent';
     }
   }
 
 });
-
-
-// bar.addEventListener('click', () => {
-//   // nDiv.style.display.toggle('block')
-
-//   for (let i = 1; i < nDiv.length; i++) {
-//     if (nDiv[i].style.display === "none") {
-//       nDiv[i].style.display = "block";
-//       nav.style.backgroundColor = 'white';
-//     } else {
-//       nDiv[i].style.display = "none";
-//       nav.style.backgroundColor = 'transparent';
-//     }
-//   }
-
-// });
